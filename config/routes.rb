@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # restaurants/new
   # CRUD routes
-
+  root to: 'restaurants#index'
   # Read all
   get '/restaurants', to: 'restaurants#index', as: :restaurants
 
