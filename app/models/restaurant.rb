@@ -3,4 +3,5 @@ class Restaurant < ApplicationRecord
   # validations
   # validates :column_name, validation_name: arg
   validates :name, presence: true
+  validates :address, presence: true
 end
