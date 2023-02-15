@@ -1,4 +1,15 @@
 class RestaurantsController < ApplicationController
+
+  # CRUD -> read WHERE
+  def top
+    @restaurants = Restaurant.where(rating: 5)
+  end
+
+  # CRUD -> read - show page for a chef
+  def chef
+    @restaurant = Restaurant.find(params[:id])
+  end
+
   def index
     @restaurants = Restaurant.all
   end
@@ -46,7 +57,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address)
+    params.require(:restaurant).permit(:name, :address, :category)
   end
 
 end
