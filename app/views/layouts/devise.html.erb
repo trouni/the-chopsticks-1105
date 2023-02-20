@@ -10,7 +10,14 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 offset-4">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
