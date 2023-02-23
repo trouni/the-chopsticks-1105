@@ -26,6 +26,7 @@ puts "Creating #{chefs.count} Restaurants..."
 chefs.shuffle.each do |name|
   Restaurant.create!(
     name: "#{name}'s #{Faker::Restaurant.name}",
+    description: Faker::Restaurant.description,
     address: Faker::Address.street_address,
     rating: rand(1..5),
     category: categories.delete_at(rand(0...categories.length)),
@@ -35,3 +36,13 @@ chefs.shuffle.each do |name|
 end
 puts "...created #{Restaurant.count} restaurants"
 
+puts "Creating reviews..."
+Restaurant.all.each do |restaurant|
+  rand(0..10).times do
+    Review.create!(
+      content: Faker::Restaurant.review,
+      restaurant: restaurant
+    )
+  end
+end
+puts "...created #{Review.count} reviews"

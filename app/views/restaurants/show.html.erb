@@ -21,7 +21,7 @@
           <% end %>
         </p>
       </div>
-      <p class="fw-lighter opacity-75 mt-2"><%= Faker::Restaurant.description  %></p>
+      <p class="fw-lighter opacity-75 mt-2"><%= @restaurant.description %></p>
       <div class="d-flex align-items-center">
         <h3>Reviews</h3>
         <%= link_to '+', new_restaurant_review_path(@restaurant), class: 'text-dark ms-2 text-decoration-none'  %>
