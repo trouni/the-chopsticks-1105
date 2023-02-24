@@ -8,8 +8,11 @@
     <% end %>
   </div>
   <div class="cards">
-    <% @restaurants.each do |restaurant| %>
-      <%= render 'restaurants/card', restaurant: restaurant %>
-    <% end %>
+    <%= render @restaurants, show_owner: false %>
+    <%# @restaurants.each do |restaurant| %>
+      <%#= render restaurant, show_owner: false %>
+      <%# `render restaurant` is the same as this line below: %>
+      <%#= render 'restaurants/restaurant', restaurant: restaurant, show_owner: false %>
+      <%# end %>
+    </div>
   </div>
-</div>
