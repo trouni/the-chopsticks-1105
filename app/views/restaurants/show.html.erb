@@ -25,15 +25,17 @@
       <div class="d-flex align-items-center">
         <h3>Reviews</h3>
       </div>
-      <div>
-        <%= render 'reviews/new', restaurant: @restaurant, review: Review.new %>
-      </div>
-      <div>
-        <% if @restaurant.reviews.any? %>
-          <%= render @restaurant.reviews.order(created_at: :desc) %>
-        <% else %>
-          <p>No reviews yet.</p>
-        <% end %>
+      <div data-controller="insert-in-list">
+        <div>
+          <%= render 'reviews/new', restaurant: @restaurant, review: Review.new %>
+        </div>
+        <div data-insert-in-list-target="list">
+          <% if @restaurant.reviews.any? %>
+            <%= render @restaurant.reviews.order(created_at: :desc) %>
+          <% else %>
+            <p>No reviews yet.</p>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-12 col-sm-4 mt-5">
